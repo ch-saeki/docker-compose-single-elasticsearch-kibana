@@ -22,6 +22,7 @@ services:
       options:
         max-size: '10m'
         max-file: '3'
+    restart: always
   kibana:
     image: docker.elastic.co/kibana/kibana:7.5.1
     ports:
@@ -29,7 +30,7 @@ services:
     environment:
       - "ELASTICSEARCH_HOSTS=http://es:9200"
       - "I18N_LOCALE=ja-JP"
-
+    restart: always
 volumes:
   esdata:
     driver: local
