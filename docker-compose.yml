@@ -10,7 +10,8 @@ services:
       - node.data=true
       - xpack.security.enabled=false
       - bootstrap.memory_lock=true
-      - "ES_JAVA_OPTS=-Xms2048m -Xmx2048m"
+      - "ES_JAVA_OPTS=-Xms1024m -Xmx1024m"
+      - "indices.fielddata.cache.size=50%"
     volumes:
       - esdata:/usr/share/elasticsearch/data
     ulimits:
